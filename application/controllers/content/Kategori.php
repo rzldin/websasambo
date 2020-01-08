@@ -16,6 +16,7 @@ class Kategori extends CI_Controller {
 				'berita' => $this->berita_model->home(1),
 				'title'  => 'Sasambo - Pariwisata'
 			);
+			$this->load->view('layout/head', $data);
 			$this->load->view('content/pariwisata/list', $data, FALSE);
 		}
 	
@@ -25,6 +26,7 @@ class Kategori extends CI_Controller {
 				'berita' => $this->berita_model->home(2),
 				'title'  => 'Sasambo - Ekonomi'
 			);
+			$this->load->view('layout/head', $data);
 			$this->load->view('content/ekonomi/list', $data, FALSE);
 		}
 
@@ -34,6 +36,7 @@ class Kategori extends CI_Controller {
 				'berita' => $this->berita_model->home(3),
 				'title'  => 'Sasambo - Teknologi'
 			);
+			$this->load->view('layout/head', $data);
 			$this->load->view('content/teknologi/list', $data, FALSE);
 		}
 
@@ -43,6 +46,7 @@ class Kategori extends CI_Controller {
 				'berita' => $this->berita_model->home(4),
 				'title'  => 'Sasambo - Olahraga'
 			);
+			$this->load->view('layout/head', $data);
 			$this->load->view('content/olahraga/list', $data, FALSE);
 		}
 
@@ -52,6 +56,7 @@ class Kategori extends CI_Controller {
 				'berita' => $this->berita_model->home(5),
 				'title'  => 'Sasambo - Pendidikan'
 			);
+			$this->load->view('layout/head', $data);
 			$this->load->view('content/pendidikan/list', $data, FALSE);
 		}
 
@@ -61,6 +66,7 @@ class Kategori extends CI_Controller {
 				'berita' => $this->berita_model->home(6),
 				'title'  => 'Sasambo - Politik'
 			);
+			$this->load->view('layout/head', $data);
 			$this->load->view('content/politik/list', $data, FALSE);
 		}
 
@@ -70,6 +76,7 @@ class Kategori extends CI_Controller {
 				'berita' => $this->berita_model->home(7),
 				'title'  => 'Sasambo - Sosbud'
 			);
+			$this->load->view('layout/head', $data);
 			$this->load->view('content/sosbud/list', $data, FALSE);
 		}
 
@@ -79,6 +86,7 @@ class Kategori extends CI_Controller {
 				'berita' => $this->berita_model->home(8),
 				'title'  => 'Sasambo - Hukum'
 			);
+			$this->load->view('layout/head', $data);
 			$this->load->view('content/hukum/list', $data, FALSE);
 		}
 

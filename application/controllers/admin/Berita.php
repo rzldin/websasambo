@@ -74,7 +74,7 @@ class Berita extends CI_Controller {
 
 		$data = array ( 'id_user' 			=> $this->session->userdata('id_user'),
 						'id_kategori' 		=> $i->post('id_kategori'),
-						'slug_berita' 		=> url_title($this->input->post('judul_berita'), 					'dash', TRUE),
+						'slug_berita' 		=> url_title($i->post('judul_berita'), 'dash', TRUE),
 						'judul_berita' 		=> $i->post('judul_berita'),
 						'isi_berita' 		=> $i->post('isi_berita'),
 						'gambar'			=> $upload_data['uploads']['file_name'],

@@ -1,3 +1,10 @@
+<?php
+// Ambil data user berdasarkan data login
+$id_user      = $this->session->userdata('id_user');
+
+$user_aktif   = $this->user_model->detail($id_user); 
+  
+?>
  <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -20,9 +27,15 @@
                 <li><a href="<?php echo base_url('user/content/politik') ?>">Politik</a></li>
                 <li><a href="<?php echo base_url('user/content/sosbud') ?>">Sosbud</a></li>
                 <li><a href="<?php echo base_url('user/content/hukum') ?>">Hukum</a></li>
-                <li><a class="masuk" href="<?php echo base_url() ?>">Buat Story</a></li>
-                <li><a href="<?php echo base_url() ?>">User</a></li>
-              </li>
+                <li class="dropdown">
+                <a href="<?php echo base_url() ?>" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $user_aktif->nama ?> <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="<?php echo base_url('akun/profile') ?>">Profile</a></li>
+                  <li><a href="<?php echo base_url('akun/addstory') ?>">Buat Story</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="<?php echo base_url('userlogin/logout') ?>" class="btn btn-success btn-flat">Logout</a></li>
+                </ul>
+              </li> 
 
           </ul>
         </div>

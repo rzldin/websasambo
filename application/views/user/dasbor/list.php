@@ -3,7 +3,7 @@
         <div class="row">
 
             <div class="col-md-7">
-                    <div class="thumbnail-atas" style="background-image: url(assets/template/assets/img/feature-staticc1.jpg);">
+                    <div class="thumbnail-atas" style="background-image: url(<?php echo base_url() ?>assets/template/assets/img/feature-staticc1.jpg);">
                       <div class="overlay">
                         <div class="page-title">
                         <p>January 1, 2019</p>
@@ -16,7 +16,7 @@
             </div>
             <!-- col-md-7 -->
             <div class="col-md-5">
-                    <div class="thumbnail-samping" style="background-image: url(assets/template/assets/img/feature-staticc1.jpg);">
+                    <div class="thumbnail-samping" style="background-image: url(<?php echo base_url() ?>assets/template/assets/img/feature-staticc1.jpg);">
                       <div class="overlay-samping"></div>
                         <div class="page-title-samping1">
                         <p>January 1, 2019</p>
@@ -25,7 +25,7 @@
                     </div>
                     <!-- feature_article_img -->
 
-                    <div class="thumbnail-samping" style="background-image: url(assets/template/assets/img/feature-staticc1.jpg);">
+                    <div class="thumbnail-samping" style="background-image: url(<?php echo base_url() ?>assets/template/assets/img/feature-staticc1.jpg);">
                       <div class="overlay-samping"></div>
                         <div class="page-title-samping">
                         <p>January 1, 2019</p>
@@ -48,11 +48,11 @@
         foreach ($berita_pariwisata as $key => $value) { 
           if($key == 0) {
         ?>
-        <div class="thumbnail-kategori-utama" style="background-image: url(<?php echo base_url('assets/upload/image/thumbs/'.$value->gambar); ?>);">
+        <div class="thumbnail-kategori-utama" style="background-image: url(<?php echo base_url('assets/upload/image/'.$value->gambar); ?>);">
           <div class="overlay-kategori-utama"></div>
             <div class="page-title-kategori-utama">
               <p><?php echo $value->tanggal_post; ?></p>
-              <a class="judul-kategori-utama" href=""><?php echo $value->judul_berita; ?></a>
+              <a class="judul-kategori-utama" href="<?php echo base_url('home/read/'.$value->slug_berita); ?>"><?php echo $value->judul_berita; ?></a>
                <span class="">Oleh <a href=""><?php echo $value->nama; ?></a></span>
             </div>
          </div>
@@ -62,7 +62,7 @@
         <div class="media-left">
             <a href="#"><img class="media-object" src="<?php echo base_url('assets/upload/image/thumbs/'.$value->gambar); ?>" alt="Generic placeholder image"></a>
         </div>
-        <div class="media-body"><h3 class="media-heading"><a href="single.html" target="_self"><?php echo $value->judul_berita; ?></a></h3> 
+        <div class="media-body"><h3 class="media-heading"><a href="<?php echo base_url('home/read/'.$value->slug_berita); ?>" target="_self"><?php echo $value->judul_berita; ?></a></h3> 
           </div>
     </div>
 
@@ -82,11 +82,11 @@
         foreach ($berita_ekonomi as $key => $value) { 
           if($key == 0) {
         ?>
-        <div class="thumbnail-kategori-utama" style="background-image: url(<?php echo base_url('assets/upload/image/thumbs/'.$value->gambar); ?>);">
+        <div class="thumbnail-kategori-utama" style="background-image: url(<?php echo base_url('assets/upload/image/'.$value->gambar); ?>);">
           <div class="overlay-kategori-utama"></div>
             <div class="page-title-kategori-utama">
               <p><?php echo $value->tanggal_post; ?></p>
-              <a class="judul-kategori-utama" href=""><?php echo $value->judul_berita; ?></a>
+              <a class="judul-kategori-utama" href="<?php echo base_url('home/read/'.$value->slug_berita); ?>"><?php echo $value->judul_berita; ?></a>
             </div>
          </div>
         <?php } else { ?>
@@ -95,7 +95,7 @@
         <div class="media-left">
             <a href="#"><img class="media-object" src="<?php echo base_url('assets/upload/image/thumbs/'.$value->gambar); ?>" alt="Generic placeholder image"></a>
         </div>
-        <div class="media-body"><h3 class="media-heading"><a href="single.html" target="_self"><?php echo $value->judul_berita; ?></a></h3> 
+        <div class="media-body"><h3 class="media-heading"><a href="<?php echo base_url('home/read/'.$value->slug_berita); ?>" target="_self"><?php echo $value->judul_berita; ?></a></h3> 
           </div>
     </div>
 
@@ -114,11 +114,11 @@
         foreach ($berita_teknologi as $key => $value) { 
           if($key == 0) {
         ?>
-        <div class="thumbnail-kategori-utama" style="background-image: url(<?php echo base_url('assets/upload/image/thumbs/'.$value->gambar); ?>);">
+        <div class="thumbnail-kategori-utama" style="background-image: url(<?php echo base_url('assets/upload/image/'.$value->gambar); ?>);">
           <div class="overlay-kategori-utama"></div>
             <div class="page-title-kategori-utama">
               <p><?php echo $value->tanggal_post; ?></p>
-              <a class="judul-kategori-utama" href="" ><?php echo $value->judul_berita; ?></a>
+              <a class="judul-kategori-utama" href="<?php echo base_url('home/read/'.$value->slug_berita); ?>" ><?php echo $value->judul_berita; ?></a>
             </div>
          </div>
         <?php } else { ?>
@@ -127,7 +127,7 @@
         <div class="media-left">
             <a href="#"><img class="media-object" src="<?php echo base_url('assets/upload/image/thumbs/'.$value->gambar); ?>" alt="Generic placeholder image"></a>
         </div>
-        <div class="media-body"><h3 class="media-heading"><a href="single.html" target="_self"><?php echo $value->judul_berita; ?></a></h3> 
+        <div class="media-body"><h3 class="media-heading"><a href="<?php echo base_url('home/read/'.$value->slug_berita); ?>" target="_self"><?php echo $value->judul_berita; ?></a></h3> 
           </div>
     </div>
 
@@ -144,13 +144,16 @@
 
     <?php
       foreach ($iklan as $key => $value) {
+        if ($key == 1) {
+          break;
+        }
     ?>
     <a target="_blank" href="<?php echo $value->link_iklan; ?>">
-    <div class="iklan" style="background-image: url(<?php echo base_url('assets/upload/image/thumbs/'.$value->gambar) ?>);height: 250px; background-size: 100%">
-      <!-- <p>space iklan</p> -->
-    </div>
-    </a>
+    <div class="iklan" style="background-image: /*url(<?php echo base_url('assets/upload/image/'.$value->gambar) ?>);*/height: 250px; background-size: 100%">
+      <p>space iklan</p>
+       </a>
     <?php } ?>
+    </div>
   
 
 
@@ -164,11 +167,11 @@
         </div>
         <?php foreach ($berita_hangat as $key => $value) {
           ?>
-        <div class="thumbnail-hangat" style="background-image: url(<?php echo base_url('assets/upload/image/thumbs/'.$value->gambar); ?>);">
+        <div class="thumbnail-hangat" style="background-image: url(<?php echo base_url('assets/upload/image/'.$value->gambar); ?>);">
           <div class="overlay-hangat"></div>
             <div class="page-title-hangat">
               <p><?php echo $value->tanggal_post; ?></p>
-              <a class="judul-hangat" href=""><?php echo $value->judul_berita; ?></a>
+              <a class="judul-hangat" href="<?php echo base_url('home/read/'.$value->slug_berita); ?>"><?php echo $value->judul_berita; ?></a>
               <br>
               <p>Oleh <a href=""><?php echo $value->nama; ?></a></p>
             </div>
@@ -183,11 +186,11 @@
         foreach ($berita_sosbud as $key => $value) { 
           if($key == 0) {
         ?>
-        <div class="thumbnail-kategori-utama" style="background-image: url(<?php echo base_url('assets/upload/image/thumbs/'.$value->gambar); ?>);">
+        <div class="thumbnail-kategori-utama" style="background-image: url(<?php echo base_url('assets/upload/image/'.$value->gambar); ?>);">
           <div class="overlay-kategori-utama"></div>
             <div class="page-title-kategori-utama">
               <p><?php echo $value->tanggal_post; ?></p>
-              <a class="judul-kategori-utama" href=""><?php echo $value->judul_berita; ?></a>
+              <a class="judul-kategori-utama" href="<?php echo base_url('home/read/'.$value->slug_berita); ?>"><?php echo $value->judul_berita; ?></a>
             </div>
          </div>
         <?php } else { ?>
@@ -196,7 +199,7 @@
         <div class="media-left">
             <a href="#"><img class="media-object" src="<?php echo base_url('assets/upload/image/thumbs/'.$value->gambar); ?>" alt="Generic placeholder image"></a>
         </div>
-        <div class="media-body"><h3 class="media-heading"><a href="single.html" target="_self"><?php echo $value->judul_berita; ?></a></h3> 
+        <div class="media-body"><h3 class="media-heading"><a href="<?php echo base_url('home/read/'.$value->slug_berita); ?>" target="_self"><?php echo $value->judul_berita; ?></a></h3> 
           </div>
     </div>
 
@@ -215,11 +218,11 @@
         foreach ($berita_olahraga as $key => $value) { 
           if($key == 0) {
         ?>
-        <div class="thumbnail-kategori-utama" style="background-image: url(<?php echo base_url('assets/upload/image/thumbs/'.$value->gambar); ?>);">
+        <div class="thumbnail-kategori-utama" style="background-image: url(<?php echo base_url('assets/upload/image/'.$value->gambar); ?>);">
           <div class="overlay-kategori-utama"></div>
             <div class="page-title-kategori-utama">
               <p><?php echo $value->tanggal_post; ?></p>
-              <a class="judul-kategori-utama" href=""><?php echo $value->judul_berita; ?></a>
+              <a class="judul-kategori-utama" href="<?php echo base_url('home/read/'.$value->slug_berita); ?>"><?php echo $value->judul_berita; ?></a>
             </div>
          </div>
         <?php } else { ?>
@@ -228,7 +231,7 @@
         <div class="media-left">
             <a href="#"><img class="media-object" src="<?php echo base_url('assets/upload/image/thumbs/'.$value->gambar); ?>" alt="Generic placeholder image"></a>
         </div>
-        <div class="media-body"><h3 class="media-heading"><a href="single.html" target="_self"><?php echo $value->judul_berita; ?></a></h3> 
+        <div class="media-body"><h3 class="media-heading"><a href="<?php echo base_url('home/read/'.$value->slug_berita); ?>" target="_self"><?php echo $value->judul_berita; ?></a></h3> 
           </div>
     </div>
 
@@ -241,12 +244,15 @@
     </div>
   </div>
 
-    <?php
+     <?php
       foreach ($iklan as $key => $value) {
+        if ($key == 1) {
+          break;
+        }
     ?>
     <a target="_blank" href="<?php echo $value->link_iklan; ?>">
-    <div class="iklan" style="background-image: url(<?php echo base_url('assets/upload/image/thumbs/'.$value->gambar) ?>);height: 250px; background-size: 100%">
-      <!-- <p>space iklan</p> -->
+    <div class="iklan" style="background-image: /*url(<?php echo base_url('assets/upload/image/'.$value->gambar) ?>);*/height: 250px; background-size: 100%">
+      <p>space iklan</p>
     </div>
     </a>
     <?php } ?>>
@@ -264,11 +270,11 @@
         foreach ($berita_pendidikan as $key => $value) { 
           if($key == 0) {
         ?>
-        <div class="thumbnail-kategori-utama" style="background-image: url(<?php echo base_url('assets/upload/image/thumbs/'.$value->gambar); ?>);">
+        <div class="thumbnail-kategori-utama" style="background-image: url(<?php echo base_url('assets/upload/image/'.$value->gambar); ?>);">
           <div class="overlay-kategori-utama"></div>
             <div class="page-title-kategori-utama">
               <p><?php echo $value->tanggal_post; ?></p>
-              <a class="judul-kategori-utama" href=""><?php echo $value->judul_berita; ?></a>
+              <a class="judul-kategori-utama" href="<?php echo base_url('home/read/'.$value->slug_berita); ?>"><?php echo $value->judul_berita; ?></a>
             </div>
          </div>
         <?php } else { ?>
@@ -277,7 +283,7 @@
         <div class="media-left">
             <a href="#"><img class="media-object" src="<?php echo base_url('assets/upload/image/thumbs/'.$value->gambar); ?>" alt="Generic placeholder image"></a>
         </div>
-        <div class="media-body"><h3 class="media-heading"><a href="single.html" target="_self"><?php echo $value->judul_berita; ?></a></h3> 
+        <div class="media-body"><h3 class="media-heading"><a href="<?php echo base_url('home/read/'.$value->slug_berita); ?>" target="_self"><?php echo $value->judul_berita; ?></a></h3> 
           </div>
     </div>
 
@@ -296,11 +302,11 @@
         foreach ($berita_hukum as $key => $value) { 
           if($key == 0) {
         ?>
-        <div class="thumbnail-kategori-utama" style="background-image: url(<?php echo base_url('assets/upload/image/thumbs/'.$value->gambar); ?>);">
+        <div class="thumbnail-kategori-utama" style="background-image: url(<?php echo base_url('assets/upload/image/'.$value->gambar); ?>);">
           <div class="overlay-kategori-utama"></div>
             <div class="page-title-kategori-utama">
               <p><?php echo $value->tanggal_post; ?></p>
-              <a class="judul-kategori-utama" href=""><?php echo $value->judul_berita; ?></a>
+              <a class="judul-kategori-utama" href="<?php echo base_url('home/read/'.$value->slug_berita); ?>"><?php echo $value->judul_berita; ?></a>
             </div>
          </div>
         <?php } else { ?>
@@ -309,7 +315,7 @@
         <div class="media-left">
             <a href="#"><img class="media-object" src="<?php echo base_url('assets/upload/image/thumbs/'.$value->gambar); ?>" alt="Generic placeholder image"></a>
         </div>
-        <div class="media-body"><h3 class="media-heading"><a href="single.html" target="_self"><?php echo $value->judul_berita; ?></a></h3> 
+        <div class="media-body"><h3 class="media-heading"><a href="<?php echo base_url('home/read/'.$value->slug_berita); ?>" target="_self"><?php echo $value->judul_berita; ?></a></h3> 
           </div>
     </div>
 
@@ -328,11 +334,11 @@
         foreach ($berita_politik as $key => $value) { 
           if($key == 0) {
         ?>
-        <div class="thumbnail-kategori-utama" style="background-image: url(<?php echo base_url('assets/upload/image/thumbs/'.$value->gambar); ?>);">
+        <div class="thumbnail-kategori-utama" style="background-image: url(<?php echo base_url('assets/upload/image/'.$value->gambar); ?>);">
           <div class="overlay-kategori-utama"></div>
             <div class="page-title-kategori-utama">
               <p><?php echo $value->tanggal_post; ?></p>
-              <a class="judul-kategori-utama" href=""><?php echo $value->judul_berita; ?></a>
+              <a class="judul-kategori-utama" href="<?php echo base_url('home/read/'.$value->slug_berita); ?>"><?php echo $value->judul_berita; ?></a>
             </div>
          </div>
         <?php } else { ?>
@@ -341,7 +347,7 @@
         <div class="media-left">
             <a href="#"><img class="media-object" src="<?php echo base_url('assets/upload/image/thumbs/'.$value->gambar); ?>" alt="Generic placeholder image"></a>
         </div>
-        <div class="media-body"><h3 class="media-heading"><a href="single.html" target="_self"><?php echo $value->judul_berita; ?></a></h3> 
+        <div class="media-body"><h3 class="media-heading"><a href="<?php echo base_url('home/read/'.$value->slug_berita); ?>" target="_self"><?php echo $value->judul_berita; ?></a></h3> 
           </div>
     </div>
 

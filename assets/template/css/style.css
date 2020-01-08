@@ -41,6 +41,12 @@ Author: uiCookies.com
 # Mid grey (sub header) #666666
 # -------------------------------------------------------------------*/
 
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     font-size: 13px;

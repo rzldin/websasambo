@@ -44,5 +44,18 @@ class Home extends CI_Controller {
 
 
 
+	//Menampilkan Berita
+	public function read($slug_berita)
+	{
+		$berita 		= $this->berita_model->read($slug_berita);
+					  
+		$data = array(	'title'				=> 'Sasambo',
+						'berita'			=> $berita,
+						'isi'				=> 'home/read_view'
+						);
+									  
+		$this->load->view('layout/wrapper', $data, FALSE);
+	}
+
 
 }

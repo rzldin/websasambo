@@ -4,7 +4,7 @@ echo validation_errors('<div class="alert alert-warning">','</div>');
 
 // Error Upload
 if(isset($error_upload)) {
-	echo '<div class="alert alert-warning">'.$errors_upload.'</div>';
+	echo '<div class="alert alert-warning">'.$error_upload.'</div>';
 }
 // form Open
 echo form_open_multipart(base_url('admin/berita/tambah'));

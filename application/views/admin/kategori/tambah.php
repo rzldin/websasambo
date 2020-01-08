@@ -22,14 +22,14 @@
       ?>
       <div class="form-group">
           <label class="col-sm-3 control-label">Nama Kategori</label>
-          <div class="col-sm-9">
+          <div class="col-sm-7">
             <input type="text" class="form-control" name="nama_kategori" placeholder="Nama Kategori" required="required">
           </div>
         </div>
 
         <div class="form-group">
           <label class="col-sm-3 control-label">Urutan Kategori</label>
-          <div class="col-sm-9">
+          <div class="col-sm-7">
             <input type="number" class="form-control" name="urutan" placeholder="Urutan">
           </div>
         </div>
@@ -37,7 +37,7 @@
         <div class="form-group">
           <label class="col-sm-3 control-label"></label>
           <div class="col-sm-9">
-            <input type="submit" class="btn btn-success" name="submit" value="Simpan Data">
+            <input type="submit" class="btn btn-primary" name="submit" value="Simpan Data">
           </div>
         </div>
       <?php

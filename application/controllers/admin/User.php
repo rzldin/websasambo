@@ -60,8 +60,6 @@ class User extends CI_Controller {
 		redirect(base_url('admin/user'),'refresh');
 	}
 }
-
-
 	public function edit($id_user)
 	{	
 		$user  = $this->user_model->detail($id_user); 

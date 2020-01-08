@@ -1,36 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Sasambo - Portal Berita Online Sumbawa</title>
+ <?php
+// Ambil data user berdasarkan data login
+$id_user      = $this->session->userdata('id_user');
 
-    <!-- Bootstrap -->
-    <link href="<?php echo base_url() ?>assets/template/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?php echo base_url() ?>assets/template/css/bootstrap.css" rel="stylesheet">
-    <link href="<?php echo base_url() ?>assets/template/css/sasambo.css" rel="stylesheet">
-    <!-- font-awesome -->
-    <link href="<?php echo base_url() ?>assets/template/assets/fonts/font-awesome/font-awesome.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <!-- Mobile Menu Style -->
-    <link href="<?php echo base_url() ?>assets/template/assets/css/mobile-menu.css" rel="stylesheet">
-
-    <!-- Owl carousel -->
-    <link href="<?php echo base_url() ?>assets/template/assets/css/owl.carousel.css" rel="stylesheet">
-    <link href="<?php echo base_url() ?>assets/template/assets/css/owl.theme.default.min.css" rel="stylesheet">
-    <!-- Theme Style -->
-    <link href="<?php echo base_url() ?>assets/template/assets/css/style.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
+$user_aktif   = $this->user_model->detail($id_user); 
+  
+?>
+ <body>
     <!-- Fixed navbar -->
    <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
@@ -41,27 +16,31 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?php echo base_url('#') ?>">Sasambo</a>
+          <a class="navbar-brand" href="<?php echo base_url() ?>">Sasambo</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
               <li><a href="<?php echo base_url('user/dasbor') ?>">Beranda</a></li>
-              <li><a href="<?php echo base_url('user/content/pariwisata') ?>">Pariwisata</a></li>
-              <li class="active"><a href="katnomi.html">Ekonomi<span class="sr-only">(current)</span></a></li>
+              <li><a href="<?php echo base_url('user/content/pariwisata')?>">Pariwisata</a></li>
+              <li class="active"><a href="<?php echo base_url('user/content/ekonomi') ?>">Ekonomi<span class="sr-only">(current)</span></a></li>
               <li><a href="<?php echo base_url('user/content/teknologi') ?>">Teknologi</a></li>
               <li><a href="<?php echo base_url('user/content/olahraga') ?>">Olahraga</a></li>
               <li><a href="<?php echo base_url('user/content/pendidikan') ?>">Pendidikan</a></li>
               <li><a href="<?php echo base_url('user/content/politik') ?>">Politik</a></li>
               <li><a href="<?php echo base_url('user/content/sosbud') ?>">Sosbud</a></li>
-              <li><a href="<?php echo base_url('user/content/hukum') ?>">Hukum</a></li>
-              <li><a class="masuk" href="<?php echo base_url() ?>">Buat Story</a></li>
-              <li><a href="<?php echo base_url() ?>">User</a></li>            
-          </ul>
+              <li class="dropdown">
+                <a href="<?php echo base_url('user/dasbor') ?>" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $user_aktif->nama ?> <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="<?php echo base_url('akun/profile') ?>">Profile</a></li>
+                  <li><a href="<?php echo base_url('akun/addstory') ?>">Buat Story</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="<?php echo base_url('userlogin/logout') ?>" class="btn btn-success btn-flat">Logout</a></li>
+                </ul>
+              </li> 
         </div>
       </div>
     </nav>
-
-    <div class="container">
+<div class="container">
       <div class="container">
 
     <div class="kategori-container">
@@ -76,15 +55,15 @@
         <div class="row sc2-kat-row">
           <?php foreach ($berita as $key => $value) { ?>
           <div class="col-md-4" id="sc1-pariwisata">
-            <div class="thumbnail-kategori-par" style="background-image: url(<?php echo base_url('assets/upload/image/thumbs/'.$value->gambar); ?>">
+            <div class="thumbnail-kategori-par" style="background-image: url(<?php echo base_url('assets/upload/image/'.$value->gambar); ?>">
               <div class="overlay-kategori-par"></div>
             </div>
             <div class="garis-merah"></div>
                 <div class="page-title-kategori">
-                  <span class="author-name"><a href="">Habibullah</a></span>
+                  <span class="author-name"><a href=""><?php echo $value->nama; ?></a></span>
                   &nbsp;|&nbsp;
                   <span class="upload-time"><a href=""><?php echo $value->tanggal_post; ?></a></span> <br>
-                  <a href="" class="judul-kategori"><?php echo $value->judul_berita; ?></a>
+                  <a href="<?php echo base_url('home/read/'.$value->slug_berita); ?>" class="judul-kategori"><?php echo $value->judul_berita; ?></a>
                 </div>
               </div>
           <?php
@@ -191,16 +170,3 @@
     </div>
 
     </div>
-
-    <div class="sasambo-footer">
-      <a>
-        Sasambo
-      </a>
-      <p>2018 sasambo.com. Allright Reserved</p>
-    </div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-  </body>
-</html>

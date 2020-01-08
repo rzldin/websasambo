@@ -47,6 +47,7 @@ class Berita_model extends CI_Model {
 		return $query->result();
 	}
 
+	//Berita Hangat
 	public function berita_hangat()
 	{
 		$this->db->select('berita.*,
@@ -62,6 +63,26 @@ class Berita_model extends CI_Model {
 		$query = $this->db->get();
 		return $query->result();
 	}
+
+
+	// Read Berita
+	public function read($slug_berita)
+	{
+		$this->db->select('berita.*,
+						   kategori.nama_kategori, kategori.slug_kategori,
+						   user.nama');
+		$this->db->from('berita');
+		//join
+		$this->db->join('kategori','kategori.id_kategori = berita.id_kategori','LEFT');
+		$this->db->join('user','user.id_user = berita.id_user','LEFT');
+		//end join
+		$this->db->where(array( 'status_berita'			=> 'Publish',
+								'berita.slug_berita'	=> $slug_berita));
+		$this->db->order_by('id_berita', 'DESC');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
 
 	
 	//Detail Berita

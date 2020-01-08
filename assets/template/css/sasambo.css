@@ -2,6 +2,11 @@
  * Globals
  */
 
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
 body {
   color: #555;
   padding-top: 50px;
@@ -29,6 +34,11 @@ h6, .h6 {
   .container {
     width: 100%;
   }
+}
+
+.gambar-berita {
+  width: 90px;
+  height: 90px;
 }
 
 .navbar {
@@ -90,6 +100,9 @@ h6, .h6 {
 .thumbnail-atas {
   z-index: 1;
   height: 500px;
+  padding: 5px;
+  margin: 5px;
+  margin-top: 5px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -97,7 +110,10 @@ h6, .h6 {
 
 .thumbnail-samping {
   z-index: 1;
-  height: 250px;
+  height: 248px;
+  padding: 5px;
+  margin: 5px;
+  margin-top: 5px; 
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -306,14 +322,14 @@ h6, .h6 {
   font-family: 'Montserrat', sans-serif;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center;
+  overflow: auto;
 }
 
 .page-title-kategori-utama {
     position: absolute;
     left: 4%;
-    bottom: 58%;
-    text-align: left;
+    bottom: 65%;
     color: #fff;
     padding-top: 5px;
     width: 80%;
@@ -333,6 +349,7 @@ h6, .h6 {
 }
 
 .overlay-kategori-utama {
+    position: relative;
     width: 100%;
     height: 250px;
     background: rgba(0,0,0,.1);
@@ -880,4 +897,11 @@ h6, .h6 {
 .rm-button-huk2 a:hover {
   text-decoration: none;
   color: rgb(156, 29, 136);
+}
+
+.tampilan-profile {
+  padding-top: 10%;
+  padding-bottom: 10%;
+  font-size: 16px;
+
 }

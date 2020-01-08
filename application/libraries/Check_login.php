@@ -18,7 +18,7 @@ class Check_login
 			if($this->CI->session->userdata('username') == "" && 
 			   $this->CI->session->userdata('akses_level') == "")
 			{
-				$this->CI->session->set_flashdata('suskses', 'Anda Belum Login');
+				$this->CI->session->set_flashdata('sukses', 'Anda Belum Login');
 				redirect(base_url('login'), 'refresh');
 			}
 				

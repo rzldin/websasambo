@@ -26,20 +26,7 @@
           </ul>
         </li>
 
-        <!-- Menu Layanan -->
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-dollar"></i> <span> Layanan </span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="<?php echo base_url('admin/layanan') ?>"><i class="fa fa-table"></i> Data Layanan </a></li>
-            <li><a href="<?php echo base_url('admin/layanan/tambah') ?>"><i class="fa fa-plus"></i> Tambah Layanan </a></li>
-          </ul>
-        </li>
-
+       
 
         <!-- Menu User -->
         <li class="treeview">
@@ -55,25 +42,7 @@
           </ul>
         </li>
 
-        <?php if($this->session->userdata('akses_level') == "Admin") { ?>
-
-        <!-- Menu Konfigurasi -->
-         <li class="treeview">
-          <a href="#">
-            <i class="fa fa-wrench"></i> <span> Konfigurasi Website </span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="<?php echo base_url('admin/konfigurasi') ?>"><i class="fa fa-table"></i> Konfigurasi Umum </a></li>
-            <li><a href="<?php echo base_url('admin/konfigurasi/logo') ?>"><i class="fa fa-image"></i> Konfigurasi Logo </a></li>
-             <li><a href="<?php echo base_url('admin/konfigurasi/icon') ?>"><i class="fa fa-link"></i> Konfigurasi Icon </a></li>
-          </ul>
-        </li>
-
-      <?php } ?>
-
+       
         <!-- Menu Iklan -->
         <li class="treeview">
           <a href="#">
